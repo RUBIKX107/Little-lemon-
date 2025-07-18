@@ -1,5 +1,5 @@
 """
-URL configuration for myproject project.
+URL configuration for little_lemon project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.urls import path
-from restaurant.views import booking_view
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('bookings/', booking_view, name='booking'),
+    path('api/', include('bookings.urls')),
 ]
+
